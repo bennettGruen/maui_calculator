@@ -2,7 +2,6 @@
 {
     public partial class MainPage : ContentPage
     {
-       // int count = 0;
 
         public MainPage()
         {
@@ -11,9 +10,19 @@
 
         private void OnButtonClicked(object sender, EventArgs e)
         {
-            labelResult.Text += "X";
+            if (sender is Button button)
+            {
+                switch (button.AutomationId)
+                {
+                    case "btnDelete":
+                        labelResult.Text = "";
+                        break;
 
-            //SemanticScreenReader.Announce(CounterBtn.Text);
+                    default:
+                        labelResult.Text += "0";
+                        break;
+                }
+            }
         }
     }
 }
