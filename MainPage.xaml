@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="maui_calculator.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="0"
+            Padding="0"
+            VerticalOptions="Center">
+
+            <Grid>
+                <Image
+                    Aspect="AspectFit"
+                    Source="black_plastic.jpg"
+                    HorizontalOptions="Center" 
+                    Margin="-400"/>
+
+                <Label
+                    Text="Calculator"
+                    FontSize="21"
+                    TextColor="Aquamarine"
+                    HorizontalOptions="End" 
+                    Margin="-55,-102,18,55"/>
+
+                <Grid RowSpacing="8"
+                      ColumnSpacing="0">
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Frame Grid.Column="0"
+                           Grid.Row="0"
+                           BackgroundColor="BlanchedAlmond"
+                           Opacity="0.6"
+                           Margin="5,5,-410,5"
+                           Padding="10">
+
+                        <Label
+                            x:Name="labelInput"
+                            Text=""
+                            FontSize="40"
+                            TextColor="black"
+                            HorizontalOptions="Start" />
+                    </Frame>
+
+                    <Frame Grid.Column="0"
+                           Grid.Row="1"
+                           BackgroundColor="BlanchedAlmond"
+                           Opacity="0.6"
+                           Margin="5,5,-410,5"
+                           Padding="10">
+
+                        <Label
+                            x:Name="labelResult"
+                            Text=""
+                            FontSize="40"
+                            TextColor="Black"
+                            HorizontalOptions="Start" />
+                    </Frame>
+
+                    <Button x:Name="btn0"
+                            Grid.Column="0"
+                            Grid.Row="2"
+                            BackgroundColor="BlanchedAlmond"
+                            TextColor="Black"
+                            Opacity="0.6"
+                            Text="0"
+                            FontSize="40"
+                            Padding="10,10,10,10"
+                            Margin="5"
+                            Clicked="OnButtonClicked">
+                    </Button>
+
+                    <Button Grid.Column="1"
+                            Grid.Row="2"
+                            BackgroundColor="Chocolate"
+                            TextColor="Black"
+                            Opacity="0.6"
+                            Text="C"
+                            FontSize="40"
+                            Padding="10,10,10,10"
+                            Margin="5">
+                    </Button>
+
+                    <Button Grid.Column="2"
+                        Grid.Row="2"
+                        BackgroundColor="CornflowerBlue"
+                        TextColor="Black"
+                        Opacity="0.6"
+                        Text="CE"
+                        FontSize="40"
+                        Padding="10,10,10,10"
+                        Margin="5">
+                    </Button>
+
+                    <Button Grid.Column="3"
+                        Grid.Row="2"
+                        BackgroundColor="Khaki"
+                        TextColor="Black"
+                        Opacity="0.6"
+                        Text="+"
+                        FontSize="40"
+                        Padding="10,10,10,10"
+                        Margin="5">
+                    </Button>
+                    
+                    <Button Grid.Column="4"
+                        Grid.Row="2"
+                        BackgroundColor="DarkSlateGrey"
+                        TextColor="Aquamarine"
+                        Opacity="0.6"
+                        Text="^X"
+                        FontSize="40"
+                        Padding="10,10,10,10"
+                        Margin="5">
+                    </Button>
+
+                    <Button Grid.Column="0"
+                        Grid.Row="3"
+                        BackgroundColor="DarkSlateGrey"
+                        TextColor="Aquamarine"
+                        Opacity="0.6"
+                        Text="1"
+                        FontSize="40"
+                        Padding="10,10,10,10"
+                        Margin="5">
+                    </Button>
+
+                    <Button Grid.Column="1"
+                        Grid.Row="3"
+                        BackgroundColor="BlanchedAlmond"
+                        TextColor="Black"
+                        Opacity="0.6"
+                        Text="2"
+                        FontSize="40"
+                        Padding="10,10,10,10"
+                        Margin="5">
+                    </Button>
+
+                    <Button Grid.Column="2"
+                        Grid.Row="3"
+                        BackgroundColor="Chocolate"
+                        TextColor="Black"
+                        Opacity="0.6"
+                        Text="3"
+                        FontSize="40"
+                        Padding="10,10,10,10"
+                        Margin="5">
+                    </Button>
+
+                    <Button Grid.Column="3"
+                        Grid.Row="3"
+                        BackgroundColor="CornflowerBlue"
+                        TextColor="Black"
+                        Opacity="0.6"
+                        Text="-"
+                        FontSize="40"
+                        Padding="10,10,10,10"
+                        Margin="5">
+                    </Button>
+
+                    <Button Grid.Column="4"
+                        Grid.Row="3"
+                        BackgroundColor="Khaki"
+                        TextColor="Black"
+                        Opacity="0.6"
+                        Text="√"
+                        FontSize="40"
+                        Padding="10,10,10,10"
+                        Margin="5">
+                    </Button>
+
+                    <Button Grid.Column="0"
+                        Grid.Row="4"
+                        BackgroundColor="Khaki"
+                        TextColor="Black"
+                        Opacity="0.6"
+                        Text="4"
+                        FontSize="40"
+                        Padding="10,10,10,10"
+                        Margin="5">
+                    </Button>
+
+                    <Button Grid.Column="1"
+                        Grid.Row="4"
+                        BackgroundColor="DarkSlateGrey"
+                        TextColor="Aquamarine"
+                        Opacity="0.6"
+                        Text="5"
+                        FontSize="40"
+                        Padding="10,10,10,10"
+                        Margin="5">
+                    </Button>
+
+                    <Button Grid.Column="2"
+                        Grid.Row="4"
+                        BackgroundColor="BlanchedAlmond"
+                        TextColor="Black"
+                        Opacity="0.6"
+                        Text="6"
+                        FontSize="40"
+                        Padding="10,10,10,10"
+                        Margin="5">
+                    </Button>
+
+                    <Button Grid.Column="3"
+                        Grid.Row="4"
+                        BackgroundColor="Chocolate"
+                        TextColor="Black"
+                        Opacity="0.6"
+                        Text="*"
+                        FontSize="40"
+                        Padding="10,10,10,10"
+                        Margin="5">
+                    </Button>
+
+                    <Button Grid.Column="4"
+                        Grid.Row="4"
+                        BackgroundColor="CornflowerBlue"
+                        TextColor="Black"
+                        Opacity="0.6"
+                        Text="="
+                        FontSize="40"
+                        Padding="10,10,10,10"
+                        Margin="5">
+                    </Button>
+
+                    <Button Grid.Column="0"
+                        Grid.Row="5"
+                        BackgroundColor="CornflowerBlue"
+                        TextColor="Black"
+                        Opacity="0.6"
+                        Text="7"
+                        FontSize="40"
+                        Padding="10,10,10,10"
+                        Margin="5">
+                    </Button>
+
+                    <Button Grid.Column="1"
+                        Grid.Row="5"
+                        BackgroundColor="Khaki"
+                        TextColor="Black"
+                        Opacity="0.6"
+                        Text="8"
+                        FontSize="40"
+                        Padding="10,10,10,10"
+                        Margin="5">
+                    </Button>
+
+                    <Button Grid.Column="2"
+                        Grid.Row="5"
+                        BackgroundColor="DarkSlateGrey"
+                        TextColor="Aquamarine"
+                        Opacity="0.6"
+                        Text="9"
+                        FontSize="40"
+                        Padding="10,10,10,10"
+                        Margin="5">
+                    </Button>
+
+                    <Button Grid.Column="3"
+                        Grid.Row="5"
+                        BackgroundColor="BlanchedAlmond"
+                        TextColor="Black"
+                        Opacity="0.6"
+                        Text="/"
+                        FontSize="40"
+                        Padding="10,10,10,10"
+                        Margin="5">
+                    </Button>
+
+                    <Button Grid.Column="4"
+                        Grid.Row="5"
+                        BackgroundColor="Chocolate"
+                        TextColor="Black"
+                        Opacity="0.6"
+                        Text=","
+                        FontSize="40"
+                        Padding="10,10,10,10"
+                        Margin="5">
+                    </Button>
+                </Grid>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
